@@ -10,7 +10,7 @@
 	<h1> NYTimes Summer Reads </h1>
 	<a href="/provisions/">Back to Home </a>
 		<% if (parsedData.num_results === 0) { %>
-			<h3> Sorry, no info found.</h3>			
+			<h3> Sorry, there are no information found.</h3>			
 		<% } else{ %>
 			<% for(var i = 0; i < parsedData.results.length; i++) { %>
 				<h3><%= parsedData.results[i].title %> by <%= parsedData.results[i].author %></h3>

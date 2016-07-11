@@ -12,8 +12,6 @@
 		<div class="scroll">
 				<% for(var i = 0; i<response.results.lists.length; i++){ %>
 					<% for(var j = 0; j<response.results.lists[i].books.length; j++){ %>
-					
-					
 						<a href='/provisions/views/<%= response.results.lists[i].books[j].primary_isbn13 %>'>
 						<div id="image-scroll">
 							<img src="<%= response.results.lists[i].books[j].book_image %>"> </img>
