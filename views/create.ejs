@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<title></title>
+</head>
+<body>
+	<a href="/provisions/search">New Search</a>
+	<h1 id="results"> Results found: </h1>
+		<% for(var i = 0; i < response.results.length; i++){ %>
+			<% for(var j = 0; j < response.results[i].book_details.length; j++){ %>
+				<div id="list-container">
+					<div id="create-text"><%= response.results[i].book_details[j].title %></div>
+					<div id="create-text2"><%= response.results[i].book_details[j].author %></div>
+					<a href="<%= response.results[i].amazon_product_url %>"><button id="purchase-button">Purchase Product</button></a>
+				</div>	
+			<% } %>
+		<% } %>
+</body>
+</html>

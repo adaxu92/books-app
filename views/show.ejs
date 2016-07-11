@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<title></title>
+</head>
+<body>
+	<h1> NYTimes Summer Reads </h1>
+	<a href="/provisions/">Back to Home </a>
+		<% if (parsedData.num_results === 0) { %>
+			<h3> Sorry, no info found.</h3>			
+		<% } else{ %>
+			<% for(var i = 0; i < parsedData.results.length; i++) { %>
+				<h3><%= parsedData.results[i].title %> by <%= parsedData.results[i].author %></h3>
+
+				<h3>Description: <%= parsedData.results[i].description %>
+				</h3>
+
+				<% for(var j = 0; j < parsedData.results[i].reviews.length; j++) { %>
+					<div><%= parsedData.results[i].reviews[j].book_review_link %></div>
+				<% } %>
+				
+				<h3>
+					<div>Ranked #<%= parsedData.results[i].ranks_history[0].rank %> on 
+					<%= parsedData.results[i].ranks_history[0].bestsellers_date  %> for 
+					<%= parsedData.results[i].ranks_history[0].weeks_on_list  %> weeks.
+				</h3>	
+			<% } %>	
+		<% } %>
+			<h4> Viewed book's page <%= book.views %> times.</h4>
+</body>	
+</html>

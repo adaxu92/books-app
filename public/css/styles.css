@@ -1,0 +1,45 @@
+.scroll{
+	height: 40rem;
+	white-space: nowrap;
+	padding-bottom: 3rem;
+	overflow: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	margin: 5px;
+}
+#image-scroll{
+	height: 350px;
+	width: 264px;
+	display: inline-block;
+	margin-left: 9px;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+h3, h4, form, #create-page{
+	margin-left: 20px;
+}
+#purchase-button{
+	float: right;
+	margin-right: 5px; 
+}
+a{
+	margin-bottom: 15px;
+	font-size: 2rem;
+	margin: 0 auto;
+}
+#create-text, #create-text2{
+	font-size: 2rem;
+	margin-left: 20px; 
+}
+#create-text{
+	margin-top: 10px;
+}
+#list-container{
+	border-bottom: 1px dotted black;
+	height: 100px;
+}
+#search{
+	width: xpx; margin: 0 auto;
+}
