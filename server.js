@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var mongo = require('mongodb');
 var db = process.env.MONGOD_URI || 'mongodb://localhost/books_provisions_app';
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 
 // =============
 // Middleware
