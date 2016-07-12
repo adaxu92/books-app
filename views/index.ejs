@@ -7,19 +7,21 @@
 	<title></title>
 </head>
 <body>
-	<h1> NYTimes Summer Reads </h1>
+	<nav>
+		<img id="times-logo" src="/pictures/nytimes.png"/>
+		<div id="links"><a href="/provisions/search">Search</a></div>
+	</nav>
 		<br></br>
 		<div class="scroll">
-				<% for(var i = 0; i<response.results.lists.length; i++){ %>
-					<% for(var j = 0; j<response.results.lists[i].books.length; j++){ %>
+			<% for(var i = 0; i<response.results.lists.length; i++){ %>
+				<% for(var j = 0; j<response.results.lists[i].books.length; j++){ %>
+					<div id="image-scroll">
 						<a href='/provisions/views/<%= response.results.lists[i].books[j].primary_isbn13 %>'>
-						<div id="image-scroll">
-							<img src="<%= response.results.lists[i].books[j].book_image %>"> </img>
-						</div>
+								<img id="book-image" src="<%= response.results.lists[i].books[j].book_image %>"> </img>		
 						</a>
-					<% } %>
+					</div>
 				<% } %>
+			<% } %>
 		</div>
-	<a href="/provisions/search">Search for Books</a>
 </body>	
 </html>

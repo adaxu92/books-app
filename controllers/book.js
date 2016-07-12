@@ -9,8 +9,6 @@ var mongo = require('mongodb');
 var Book = require('../models/books.js');
 var id = require('mongodb').ObjectID;
 
-
-
 // ===========================
 // GET Request to landing page 
 // ===========================
@@ -50,6 +48,7 @@ router.post('/search/view-results', function(req, res){
 		};
 	});
 });
+
 // ===========================
 // GET Request to show page 
 // ===========================

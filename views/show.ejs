@@ -7,28 +7,35 @@
 	<title></title>
 </head>
 <body>
-	<h1> NYTimes Summer Reads </h1>
-	<a href="/provisions/">Back to Home </a>
+	<nav>
+		<img id="times-logo" src="/pictures/nytimes.png"/>
+		<div id="links"><a href="/provisions">Home</a></div>
+	</nav>
 		<% if (parsedData.num_results === 0) { %>
+			<br></br>
 			<h3> Sorry, there are no information found.</h3>			
 		<% } else{ %>
 			<% for(var i = 0; i < parsedData.results.length; i++) { %>
-				<h3><%= parsedData.results[i].title %> by <%= parsedData.results[i].author %></h3>
-
-				<h3>Description: <%= parsedData.results[i].description %>
+				<br></br>
+				<h3>
+					Title:<strong> <%= parsedData.results[i].title %> by <%= parsedData.results[i].author %></strong>
 				</h3>
 
-				<% for(var j = 0; j < parsedData.results[i].reviews.length; j++) { %>
-					<div><%= parsedData.results[i].reviews[j].book_review_link %></div>
-				<% } %>
-				
+				<h3>Description:<strong> <%= parsedData.results[i].description %></strong></h3>
+
 				<h3>
-					<div>Ranked #<%= parsedData.results[i].ranks_history[0].rank %> on 
+					<div>Ranked:<strong> #<%= parsedData.results[i].ranks_history[0].rank %> on 
 					<%= parsedData.results[i].ranks_history[0].bestsellers_date  %> for 
-					<%= parsedData.results[i].ranks_history[0].weeks_on_list  %> weeks.
+					<%= parsedData.results[i].ranks_history[0].weeks_on_list  %> week(s).</strong>
 				</h3>	
+
+				<% for(var j = 0; j < parsedData.results[i].reviews.length; j++) { %>
+					<h3>
+						<i><a id="review-link" href="<%= parsedData.results[i].reviews[j].book_review_link %>"/>Reviews</a></i>
+					</h3>
+				<% } %>
 			<% } %>	
 		<% } %>
-			<h4> Viewed book's page <%= book.views %> times.</h4>
+			<h4> <%= book.views %> views</h4>
 </body>	
 </html>

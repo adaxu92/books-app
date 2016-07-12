@@ -12,10 +12,7 @@ var bookSchema = mongoose.Schema({
 });
 
 bookSchema.methods.inc = function() {	
-	// console.log(typeof this);
-	// console.log("updated")
 	Book.update(this, {$inc: {views: 1}}, function(){
-		// console.log('this updated')
 	});
 };
 

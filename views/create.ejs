@@ -7,13 +7,16 @@
 	<title></title>
 </head>
 <body>
-	<a href="/provisions/search">New Search</a>
-	<h1 id="results"> Results found: </h1>
+	<nav>
+		<img id="times-logo" src="/pictures/nytimes.png"/>
+		<div id="links"><a href="/provisions">Home</a><a href="/provisions/search">New Search</a></div>
+	</nav>
+		<h1 id="results"> Results found: </h1>
 		<% for(var i = 0; i < response.results.length; i++){ %>
 			<% for(var j = 0; j < response.results[i].book_details.length; j++){ %>
 				<div id="list-container">
-					<div id="create-text"><%= response.results[i].book_details[j].title %></div>
-					<div id="create-text2"><%= response.results[i].book_details[j].author %></div>
+					<div id="create-text"><strong><%= response.results[i].book_details[j].title %></strong></div>
+					<div id="create-text2">by <i><%= response.results[i].book_details[j].author %></i></div>
 					<a href="<%= response.results[i].amazon_product_url %>"><button id="purchase-button">Purchase Product</button></a>
 				</div>	
 			<% } %>
